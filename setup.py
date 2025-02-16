@@ -1,4 +1,6 @@
 # Ultralytics YOLO 🚀, GPL-3.0 license
+## how to write the setup script 
+## https://docs.python.org/3.11/distutils/setupscript.html
 
 import re
 from pathlib import Path
