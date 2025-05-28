@@ -138,7 +138,8 @@ def polygon2mask(imgsz, polygons, color=1, downsample_ratio=1):
         color (int): color
         downsample_ratio (int): downsample ratio
     """
-    mask = np.zeros(imgsz, dtype=np.uint8) #old
+    #mask = np.zeros(imgsz, dtype=np.uint8) #old
+    mask = np.zeros(imgsz, dtype=np.uint16) #new
     
     polygons = np.asarray(polygons)
     polygons = polygons.astype(np.int32)
