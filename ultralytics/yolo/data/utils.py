@@ -138,8 +138,8 @@ def polygon2mask(imgsz, polygons, color=1, downsample_ratio=1):
         color (int): color
         downsample_ratio (int): downsample ratio
     """
-    mask = np.zeros(imgsz, dtype=np.uint8) #old
-    #mask = np.zeros(imgsz, dtype=np.uint16) #new
+    #mask = np.zeros(imgsz, dtype=np.uint8) #old
+    mask = np.zeros(imgsz, dtype=np.uint16) #new
     
     polygons = np.asarray(polygons)
     polygons = polygons.astype(np.int32)
@@ -171,8 +171,8 @@ def polygons2masks(imgsz, polygons, color, downsample_ratio=1):
 def polygons2masks_overlap(imgsz, segments, downsample_ratio=1):
     """Return a (640, 640) overlap mask."""
     masks = np.zeros((imgsz[0] // downsample_ratio, imgsz[1] // downsample_ratio),
-                      dtype=np.int32 if len(segments) > 255 else np.uint8) # before
-                     #dtype=np.int32 if len(segments) > 512 else np.uint16) #after
+                      #dtype=np.int32 if len(segments) > 255 else np.uint8) # before
+                     dtype=np.int32 if len(segments) > 512 else np.uint16) #after
     areas = []
     ms = []
     for si in range(len(segments)):
